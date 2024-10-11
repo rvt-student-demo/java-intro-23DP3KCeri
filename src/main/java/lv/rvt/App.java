@@ -4,24 +4,22 @@ import java.util.Scanner;
 
 public class App 
 { 
-    public static void divisibleByThreeInRange(int beginning, int end) {
-        for (int i = beginning; i <= end; i++) {
-        if (i % 3 == 0) {
-        System.out.println(i);
+    public static void printStars(int number) {
+        int times = 0;
+        String star = "*";
+        while (times<number){
+            System.out.print(star);
+            times += 1;
         }
+
     }
-}
-
+    
     public static void main(String[] args) {
-    Scanner scanner = new Scanner(System.in);
-
-    System.out.print("Ievadiet diapazona sākumu: ");
-    int beginning = scanner.nextInt();
-
-    System.out.print("Ievadiet diapazona beigas: ");
-    int end = scanner.nextInt();
-
-    divisibleByThreeInRange(beginning, end);
+        printStars(5);
+        System.out.println("");
+        printStars(3);
+        System.out.println("");
+        printStars(9);
     }
 } 
     
