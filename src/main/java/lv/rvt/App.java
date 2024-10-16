@@ -1,37 +1,32 @@
 package lv.rvt;
 
-import java.util.*;
+import java.util.Scanner;
+import java.util.ArrayList;
 
 public class App 
 { 
     public static void main(String[] args) {
-        christmasTree(4);
-    }  
+        Scanner scanner = new Scanner(System.in);
+        ArrayList<Integer> numbers = new ArrayList<>();
 
-    public static void christmasTree(int height){
-        for(int i= 1; i <= height; i++){
-            printSpaces(height - i);
-            printStars(2 * i - 1);
-            System.out.println();
+        System.out.println("");
+        while(true){
+            int number = scanner.nextInt();
+            if(number==0){
+                break;
+            }
+            numbers.add(number);
         }
-
-        for(int i=0; i < 2; i++){
-            printSpaces(height - 2);
-            printStars(3);
-            System.out.println();
+        System.out.println("");
+        for (int num : numbers){
+            System.out.println(num);
         }
-    }
-
-    public static void printSpaces(int count){
-        for (int i = 0; i < count; i++){
-            System.out.print(" ");
+        int sum = 0;
+        for (int num : numbers){
+            sum+=num;
         }
-    }
-    
-    public static void printStars(int count){
-        for (int i = 0; i < count; i++){
-            System.out.print("*");
-        }
+        System.out.println("" + sum);
+        scanner.close();
     }
 } 
     
