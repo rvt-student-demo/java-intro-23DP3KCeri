@@ -3,34 +3,60 @@ package lv.rvt;
 public class Person {
     private String name;
     private int age;
-    private int weight;
     private int height;
+    private int weight;
 
-    public Person(String initialName) {
-        this.age = 0;
-        this.weight = 0;
-        this.height = 0;
-        this.name = initialName;
+    public Person(String name, int age, int height, int weight) {
+        this.name = name;
+        this.age = age;
+        this.height = height;
+        this.weight = weight;
     }
 
-    public void setHeight(int newHeight) {
-        this.height = newHeight;
+    public void printPerson() {
+        System.out.println("My name is " + this.name + " and I am " + this.age + " years old");
     }
 
-    public void setWeight(int newWeight) {
-        this.weight = newWeight;
+    public void growOlder() {
+        this.age++;
     }
 
-    public double bodyMassIndex() {
-        double heigthPerHundred = this.height / 100.0;
-        return this.weight / (heigthPerHundred * heigthPerHundred);
+    public boolean isOfLegalAge() {
+        if (this.age > 17) {
+            return true;
+        }
+
+        return false;
     }
 
-    public String getName(){
+    public void setHeight(int height) {
+        this.height = height;
+    }
+
+    public int getHeight() {
+        return this.height;
+    }
+
+    public int getWeight() {
+        return this.weight;
+    }
+
+    public void setWeight(int weight) {
+        this.weight = weight;
+    }
+
+    public double bmi() {
+        double heightInMeters = this.height / 100.0;
+
+        return this.weight / (heightInMeters * heightInMeters);
+    }
+
+    public String getName() {
         return this.name;
     }
 
+    @Override
     public String toString() {
-        return this.name + ", age " + this.age + " years, my body mass index is " + this.bodyMassIndex();
+        return "My name is " + this.name + " and I am " + this.age + " years old. My BMI is " + this.bmi();
     }
 }
